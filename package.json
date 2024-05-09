@@ -1,5 +1,5 @@
 {
-  "name": "bilbomd-mongodb-schema",
+  "name": "@bl1231/bilbomd-mongodb-schema",
   "version": "1.0.0",
   "description": "BilboMD Mongoose Schema",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/bl1231/bilbomd-mongodb-schema.git"
+    "url": "git+https://github.com/bl1231/bilbomd-mongodb-schema.git"
   },
   "author": "Scott Classen",
   "license": "ISC",
