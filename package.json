@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/bl1231/bilbomd-mongodb-schema/issues"
   },
-  "homepage": "https://github.com/bl1231/bilbomd-mongodb-schema#readme"
+  "homepage": "https://github.com/bl1231/bilbomd-mongodb-schema#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "mongoose": "^8.3.4"
+  }
 }
