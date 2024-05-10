@@ -1,5 +1,4 @@
-import { Document } from "mongoose";
-import { IUser } from "../interfaces";
+import { Document, Types } from "mongoose";
 
 interface IJob extends Document {
   __t:
@@ -15,7 +14,7 @@ interface IJob extends Document {
   time_submitted: Date;
   time_started?: Date;
   time_completed?: Date;
-  user: IUser;
+  user: Types.ObjectId;
 }
 
 interface IBilboMDPDBJob extends IJob {

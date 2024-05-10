@@ -1,4 +1,4 @@
-import { ObjectId, Document, Schema } from "mongoose";
+import { Document, Types } from "mongoose";
 
 interface IOtp {
   code: string;
@@ -13,7 +13,7 @@ interface IConfirmationCode {
 interface IUser extends Document {
   username: string;
   roles: string[];
-  refreshToken: Schema.Types.Array;
+  refreshToken: string[];
   email: string;
   status: string;
   active: boolean;
@@ -22,7 +22,7 @@ interface IUser extends Document {
   UUID: string;
   createdAt: Date;
   last_access: Date;
-  jobs: ObjectId;
+  jobs: Types.ObjectId;
 }
 
 export { IUser };

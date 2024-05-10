@@ -1,20 +1,16 @@
 import { Schema, model } from "mongoose";
 import { IUser } from "../interfaces";
 
+// const RoleSchema = new Schema({ roles: String });
+
 const userSchema = new Schema<IUser>(
   {
     username: {
       type: String,
       required: true,
     },
-    roles: {
-      type: [String],
-      default: ["User"],
-    },
-    refreshToken: {
-      type: [String],
-      default: [],
-    },
+    roles: { type: [String], default: ["User"] },
+    refreshToken: [String],
     email: {
       type: String,
       required: true,
