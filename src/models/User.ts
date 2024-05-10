@@ -1,65 +1,65 @@
-import { Schema, model } from "mongoose";
-import { IUser } from "../interfaces";
+import { Schema, model } from 'mongoose'
+import { IUser } from '../interfaces'
 
 // const RoleSchema = new Schema({ roles: String });
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
+      required: true
     },
-    roles: { type: [String], default: ["User"] },
-    refreshToken: [String],
+    roles: { type: [String], required: true, default: ['User'] },
+    refreshToken: { type: [String], required: true, default: [] },
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     status: {
       type: String,
-      enum: ["Pending", "Active"],
-      default: "Pending",
+      enum: ['Pending', 'Active'],
+      default: 'Pending'
     },
     active: {
       type: Boolean,
-      default: true,
+      default: true
     },
     confirmationCode: {
       code: {
-        type: String,
+        type: String
       },
       expiresAt: {
         type: Date,
-        expires: "2m",
-        index: { expireAfterSeconds: 0 },
-      },
+        expires: '2m',
+        index: { expireAfterSeconds: 0 }
+      }
     },
     otp: {
       code: {
-        type: String,
+        type: String
       },
       expiresAt: {
-        type: Date,
-      },
+        type: Date
+      }
     },
     UUID: {
-      type: String,
+      type: String
     },
     createdAt: Date,
     last_access: Date,
     jobs: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Job",
-      },
-    ],
+        ref: 'Job'
+      }
+    ]
   },
   {
-    timestamps: true,
+    timestamps: true
   }
-);
+)
 
-const User = model<IUser>("User", userSchema);
+const User = model<IUser>('User', userSchema)
 
-export { User };
+export { User }

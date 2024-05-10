@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2019", // Compiles to ES2019, suitable for recent Node.js versions
-    "module": "commonjs", // Use commonjs module system, as used by Node.js
-    "moduleResolution": "node", // Use Node.js module resolution mechanisms
+    "target": "ESNext", // Compiles to ES2019, suitable for recent Node.js versions
+    "module": "CommonJS", // Use commonjs module system, as used by Node.js
+    "moduleResolution": "Node", // Use Node.js module resolution mechanisms
     "outDir": "./dist", // Output directory for compiled files
     "rootDir": "./src", // Root directory of your source files
     "strict": true, // Enable all strict type-checking options
