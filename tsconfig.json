@@ -4,6 +4,7 @@
     "module": "CommonJS", // Use commonjs module system, as used by Node.js
     "moduleResolution": "Node", // Use Node.js module resolution mechanisms
     "outDir": "./dist", // Output directory for compiled files
+    "declaration": true, // create *.d.ts files
     "rootDir": "./src", // Root directory of your source files
     "strict": true, // Enable all strict type-checking options
     "esModuleInterop": true, // Allows default imports from modules with no default export
