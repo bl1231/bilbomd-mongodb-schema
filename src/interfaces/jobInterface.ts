@@ -10,7 +10,7 @@ interface IJob extends Document {
   time_submitted: Date
   time_started?: Date
   time_completed?: Date
-  user: IUser | Types.ObjectId
+  user: IUser
 }
 
 interface IBilboMDPDBJob extends IJob {
