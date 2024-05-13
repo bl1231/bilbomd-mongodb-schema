@@ -1,4 +1,5 @@
 import { Document, Types } from 'mongoose'
+import { IJob } from './jobInterface'
 
 interface IOtp {
   code: string
@@ -22,7 +23,7 @@ interface IUser extends Document {
   UUID: string
   createdAt: Date
   last_access: Date
-  jobs: Types.ObjectId
+  jobs: IJob | null
 }
 
 export { IUser }
