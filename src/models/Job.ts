@@ -7,6 +7,14 @@ import {
   IBilboMDScoperJob
 } from '../interfaces'
 
+// Enum for step statuses
+const stepStatusEnum = ['Waiting', 'Running', 'Success', 'Error']
+
+// Schema for step status
+const stepStatusSchema = new Schema({
+  status: { type: String, enum: stepStatusEnum, default: 'Waiting' }
+})
+
 const jobSchema = new Schema(
   {
     title: {
@@ -27,6 +35,18 @@ const jobSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'User',
       required: true
+    },
+    steps: {
+      pae: { type: stepStatusSchema, required: true },
+      autorg: { type: stepStatusSchema, required: true },
+      minimize: { type: stepStatusSchema, required: true },
+      heat: { type: stepStatusSchema, required: true },
+      md: { type: stepStatusSchema, required: true },
+      foxs: { type: stepStatusSchema, required: true },
+      multifoxs: { type: stepStatusSchema, required: true },
+      results: { type: stepStatusSchema, required: true },
+      email: { type: stepStatusSchema, required: true },
+      numEnsembles: { type: Number, required: true }
     }
   },
   {

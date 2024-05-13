@@ -1,6 +1,20 @@
 import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
+// Interface for steps status
+interface IStepStatus {
+  pae: string
+  autorg: string
+  minimize: string
+  heat: string
+  md: string
+  foxs: string
+  multifoxs: string
+  results: string
+  email: string
+  numEnsembles: number
+}
+
 interface IJob extends Document {
   __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper'
   title: string
@@ -11,6 +25,7 @@ interface IJob extends Document {
   time_started?: Date
   time_completed?: Date
   user: IUser
+  steps: IStepStatus
 }
 
 interface IBilboMDPDBJob extends IJob {
