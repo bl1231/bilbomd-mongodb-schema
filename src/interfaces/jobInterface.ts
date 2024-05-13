@@ -2,7 +2,7 @@ import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
 // Interface for steps status
-interface IStepStatus {
+interface IBilboMDSteps {
   pae: string
   autorg: string
   minimize: string
@@ -25,7 +25,7 @@ interface IJob extends Document {
   time_started?: Date
   time_completed?: Date
   user: IUser
-  steps: IStepStatus
+  steps: IBilboMDSteps
 }
 
 interface IBilboMDPDBJob extends IJob {
