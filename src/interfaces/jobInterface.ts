@@ -13,7 +13,10 @@ interface IBilboMDSteps {
   multifoxs: string
   results: string
   email: string
-  numEnsembles: number
+  numEnsembles?: number
+  nersc_prepare_slurm_batch?: string
+  nersc_submit_slurm_batch?: string
+  nersc_job_status?: string
 }
 
 interface IJob extends Document {

@@ -48,7 +48,10 @@ const jobSchema = new Schema(
       multifoxs: { type: stepStatusSchema, required: true },
       results: { type: stepStatusSchema, required: true },
       email: { type: stepStatusSchema, required: true },
-      numEnsembles: { type: Number, required: true }
+      numEnsembles: { type: Number, required: false },
+      nersc_prepare_slurm_batch: { type: stepStatusSchema, required: false },
+      nersc_submit_slurm_batch: { type: stepStatusSchema, required: false },
+      nersc_job_status: { type: stepStatusSchema, required: false }
     }
   },
   {
