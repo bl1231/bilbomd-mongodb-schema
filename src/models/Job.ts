@@ -12,7 +12,8 @@ const stepStatusEnum = ['Waiting', 'Running', 'Success', 'Error']
 
 // Schema for step status
 const stepStatusSchema = new Schema({
-  status: { type: String, enum: stepStatusEnum, default: 'Waiting' }
+  status: { type: String, enum: stepStatusEnum, default: 'Waiting' },
+  message: { type: String, required: false }
 })
 
 const jobSchema = new Schema(
