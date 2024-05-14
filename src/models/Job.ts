@@ -37,6 +37,7 @@ const jobSchema = new Schema(
       required: true
     },
     steps: {
+      pdb2crd: { type: stepStatusSchema, required: true },
       pae: { type: stepStatusSchema, required: true },
       autorg: { type: stepStatusSchema, required: true },
       minimize: { type: stepStatusSchema, required: true },
