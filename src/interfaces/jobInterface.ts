@@ -3,6 +3,7 @@ import { IUser } from './userInterface'
 
 // Interface for steps status
 interface IBilboMDSteps {
+  pdb2crd: string
   pae: string
   autorg: string
   minimize: string
