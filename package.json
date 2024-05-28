@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "watch": "nodemon --watch src --ext ts,json --exec 'npm run build'"
   },
   "repository": {
