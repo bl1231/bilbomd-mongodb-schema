@@ -18,7 +18,6 @@ interface IBilboMDSteps {
   multifoxs: IStepStatus
   results: IStepStatus
   email: IStepStatus
-  numEnsembles?: number
   nersc_prepare_slurm_batch?: IStepStatus
   nersc_submit_slurm_batch?: IStepStatus
   nersc_job_status?: IStepStatus
