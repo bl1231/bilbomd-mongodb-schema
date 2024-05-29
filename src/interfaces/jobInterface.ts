@@ -1,22 +1,27 @@
 import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
+interface StepStatus {
+  status: string
+  message: string
+}
+
 // Interface for steps status
 interface IBilboMDSteps {
-  pdb2crd: string
-  pae: string
-  autorg: string
-  minimize: string
-  heat: string
-  md: string
-  foxs: string
-  multifoxs: string
-  results: string
-  email: string
+  pdb2crd: StepStatus
+  pae: StepStatus
+  autorg: StepStatus
+  minimize: StepStatus
+  heat: StepStatus
+  md: StepStatus
+  foxs: StepStatus
+  multifoxs: StepStatus
+  results: StepStatus
+  email: StepStatus
   numEnsembles?: number
-  nersc_prepare_slurm_batch?: string
-  nersc_submit_slurm_batch?: string
-  nersc_job_status?: string
+  nersc_prepare_slurm_batch?: StepStatus
+  nersc_submit_slurm_batch?: StepStatus
+  nersc_job_status?: StepStatus
 }
 
 interface IJob extends Document {
