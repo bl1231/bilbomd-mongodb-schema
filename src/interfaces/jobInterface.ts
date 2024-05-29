@@ -1,27 +1,27 @@
 import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
-interface StepStatus {
+interface IStepStatus {
   status: string
   message: string
 }
 
 // Interface for steps status
 interface IBilboMDSteps {
-  pdb2crd: StepStatus
-  pae: StepStatus
-  autorg: StepStatus
-  minimize: StepStatus
-  heat: StepStatus
-  md: StepStatus
-  foxs: StepStatus
-  multifoxs: StepStatus
-  results: StepStatus
-  email: StepStatus
+  pdb2crd: IStepStatus
+  pae: IStepStatus
+  autorg: IStepStatus
+  minimize: IStepStatus
+  heat: IStepStatus
+  md: IStepStatus
+  foxs: IStepStatus
+  multifoxs: IStepStatus
+  results: IStepStatus
+  email: IStepStatus
   numEnsembles?: number
-  nersc_prepare_slurm_batch?: StepStatus
-  nersc_submit_slurm_batch?: StepStatus
-  nersc_job_status?: StepStatus
+  nersc_prepare_slurm_batch?: IStepStatus
+  nersc_submit_slurm_batch?: IStepStatus
+  nersc_job_status?: IStepStatus
 }
 
 interface IJob extends Document {
@@ -72,4 +72,12 @@ interface IBilboMDScoperJob extends IJob {
   pdb_file: string
 }
 
-export { IJob, IBilboMDPDBJob, IBilboMDCRDJob, IBilboMDAutoJob, IBilboMDScoperJob }
+export {
+  IStepStatus,
+  IBilboMDSteps,
+  IJob,
+  IBilboMDPDBJob,
+  IBilboMDCRDJob,
+  IBilboMDAutoJob,
+  IBilboMDScoperJob
+}
