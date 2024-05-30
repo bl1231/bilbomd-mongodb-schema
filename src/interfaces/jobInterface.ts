@@ -15,6 +15,7 @@ interface IBilboMDSteps {
   initfoxs: IStepStatus
   heat: IStepStatus
   md: IStepStatus
+  dcd2pdb: IStepStatus
   foxs: IStepStatus
   multifoxs: IStepStatus
   results: IStepStatus
