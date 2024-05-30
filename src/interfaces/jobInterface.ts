@@ -12,6 +12,7 @@ interface IBilboMDSteps {
   pae: IStepStatus
   autorg: IStepStatus
   minimize: IStepStatus
+  initfoxs: IStepStatus
   heat: IStepStatus
   md: IStepStatus
   foxs: IStepStatus
@@ -21,6 +22,7 @@ interface IBilboMDSteps {
   nersc_prepare_slurm_batch?: IStepStatus
   nersc_submit_slurm_batch?: IStepStatus
   nersc_job_status?: IStepStatus
+  nersc_copy_results_to_cfs?: IStepStatus
 }
 
 interface IJob extends Document {
