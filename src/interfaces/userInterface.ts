@@ -16,6 +16,7 @@ interface IUser extends Document {
   roles: string[]
   refreshToken: string[]
   email: string
+  previousEmails: string[]
   status: string
   active: boolean
   confirmationCode: IConfirmationCode | null

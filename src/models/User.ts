@@ -16,6 +16,7 @@ const userSchema = new Schema(
       required: true,
       unique: true
     },
+    previousEmails: { type: [String], required: false, default: [] },
     status: {
       type: String,
       enum: ['Pending', 'Active'],
