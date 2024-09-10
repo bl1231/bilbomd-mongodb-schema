@@ -4,7 +4,8 @@ import {
   IBilboMDPDBJob,
   IBilboMDCRDJob,
   IBilboMDAutoJob,
-  IBilboMDScoperJob
+  IBilboMDScoperJob,
+  IBilboMDAlphaFoldJob
 } from '../interfaces'
 
 // Enum for step statuses
@@ -103,6 +104,22 @@ const bilboMdAutoJobSchema = new Schema<IBilboMDAutoJob>({
   rg_max: { type: Number, required: false, min: 10, max: 100 }
 })
 
+const bilboMdAlphaFoldJobSchema = new Schema<IBilboMDAlphaFoldJob>({
+  fasta_file: { type: String, required: true },
+  pdb_file: { type: String, required: false },
+  psf_file: { type: String, required: false },
+  crd_file: { type: String, required: false },
+  pae_file: { type: String, required: false },
+  const_inp_file: { type: String, required: false },
+  conformational_sampling: {
+    type: Number,
+    enum: [1, 2, 3, 4],
+    default: 1
+  },
+  rg_min: { type: Number, required: false, min: 10, max: 100 },
+  rg_max: { type: Number, required: false, min: 10, max: 100 }
+})
+
 const bilboMdScoperJobSchema = new Schema<IBilboMDScoperJob>({
   pdb_file: { type: String, required: true }
 })
@@ -112,6 +129,7 @@ const BilboMdPDBJob = Job.discriminator('BilboMdPDB', bilboMdPDBJobSchema)
 const BilboMdCRDJob = Job.discriminator('BilboMdCRD', bilboMdCRDJobSchema)
 const BilboMdJob = Job.discriminator('BilboMd', bilboMdCRDJobSchema)
 const BilboMdAutoJob = Job.discriminator('BilboMdAuto', bilboMdAutoJobSchema)
+const BilboMdAlphaFoldJob = Job.discriminator('BilboMdAlphaFold', bilboMdAlphaFoldJobSchema)
 const BilboMdScoperJob = Job.discriminator('BilboMdScoper', bilboMdScoperJobSchema)
 
-export { Job, BilboMdJob, BilboMdPDBJob, BilboMdCRDJob, BilboMdAutoJob, BilboMdScoperJob }
+export { Job, BilboMdJob, BilboMdPDBJob, BilboMdCRDJob, BilboMdAutoJob, BilboMdScoperJob, BilboMdAlphaFoldJob }

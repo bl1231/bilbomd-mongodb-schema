@@ -26,8 +26,15 @@ interface IBilboMDSteps {
   nersc_copy_results_to_cfs?: IStepStatus
 }
 
+interface IAlphaFoldEntity {
+  name: string
+  sequence: string
+  type: string
+  copies: number
+}
+
 interface IJob extends Document {
-  __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper'
+  __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper' | 'BilboMdAlphaFold'
   title: string
   uuid: string
   status: string
@@ -70,6 +77,19 @@ interface IBilboMDAutoJob extends IJob {
   rg_max?: number
 }
 
+interface IBilboMDAlphaFoldJob extends IJob {
+  entities: IAlphaFoldEntity[]
+  fasta_file: string
+  pdb_file?: string
+  psf_file?: string
+  crd_file?: string
+  pae_file?: string
+  const_inp_file?: string
+  conformational_sampling: number
+  rg_min?: number
+  rg_max?: number
+}
+
 interface IBilboMDScoperJob extends IJob {
   pdb_file: string
 }
@@ -77,9 +97,11 @@ interface IBilboMDScoperJob extends IJob {
 export {
   IStepStatus,
   IBilboMDSteps,
+  IAlphaFoldEntity,
   IJob,
   IBilboMDPDBJob,
   IBilboMDCRDJob,
   IBilboMDAutoJob,
+  IBilboMDAlphaFoldJob,
   IBilboMDScoperJob
 }
