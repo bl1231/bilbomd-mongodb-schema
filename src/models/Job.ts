@@ -5,7 +5,8 @@ import {
   IBilboMDCRDJob,
   IBilboMDAutoJob,
   IBilboMDScoperJob,
-  IBilboMDAlphaFoldJob
+  IBilboMDAlphaFoldJob,
+  IAlphaFoldEntity
 } from '../interfaces'
 
 // Enum for step statuses
@@ -15,6 +16,13 @@ const stepStatusEnum = ['Waiting', 'Running', 'Success', 'Error']
 const stepStatusSchema = new Schema({
   status: { type: String, enum: stepStatusEnum, default: 'Waiting' },
   message: { type: String, required: false }
+})
+
+const alphaFoldEntitySchema = new Schema<IAlphaFoldEntity>({
+  name: { type: String, required: true },
+  sequence: { type: String, required: true },
+  type: { type: String, required: true },
+  copies: { type: Number, required: true }
 })
 
 const jobSchema = new Schema(
@@ -106,6 +114,7 @@ const bilboMdAutoJobSchema = new Schema<IBilboMDAutoJob>({
 
 const bilboMdAlphaFoldJobSchema = new Schema<IBilboMDAlphaFoldJob>({
   fasta_file: { type: String, required: true },
+  entities: [alphaFoldEntitySchema],
   pdb_file: { type: String, required: false },
   psf_file: { type: String, required: false },
   crd_file: { type: String, required: false },
