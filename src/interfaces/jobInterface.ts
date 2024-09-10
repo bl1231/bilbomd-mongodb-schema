@@ -8,6 +8,7 @@ interface IStepStatus {
 
 // Interface for steps status
 interface IBilboMDSteps {
+  alphafold: IStepStatus
   pdb2crd: IStepStatus
   pae: IStepStatus
   autorg: IStepStatus
@@ -78,7 +79,7 @@ interface IBilboMDAutoJob extends IJob {
 }
 
 interface IBilboMDAlphaFoldJob extends IJob {
-  entities: IAlphaFoldEntity[]
+  alphafold_entities: IAlphaFoldEntity[]
   fasta_file: string
   pdb_file?: string
   psf_file?: string

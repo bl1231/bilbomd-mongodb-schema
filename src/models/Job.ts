@@ -47,6 +47,7 @@ const jobSchema = new Schema(
       required: true
     },
     steps: {
+      alphafold: { type: stepStatusSchema, required: false },
       pdb2crd: { type: stepStatusSchema, required: true },
       pae: { type: stepStatusSchema, required: true },
       autorg: { type: stepStatusSchema, required: true },
@@ -114,7 +115,7 @@ const bilboMdAutoJobSchema = new Schema<IBilboMDAutoJob>({
 
 const bilboMdAlphaFoldJobSchema = new Schema<IBilboMDAlphaFoldJob>({
   fasta_file: { type: String, required: true },
-  entities: [alphaFoldEntitySchema],
+  alphafold_entities: [alphaFoldEntitySchema],
   pdb_file: { type: String, required: false },
   psf_file: { type: String, required: false },
   crd_file: { type: String, required: false },
