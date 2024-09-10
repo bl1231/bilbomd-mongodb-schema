@@ -105,6 +105,7 @@ const bilboMdAutoJobSchema = new Schema<IBilboMDAutoJob>({
 })
 
 const bilboMdAlphaFoldJobSchema = new Schema<IBilboMDAlphaFoldJob>({
+  fasta_file: { type: String, required: true },
   pdb_file: { type: String, required: false },
   psf_file: { type: String, required: false },
   crd_file: { type: String, required: false },
