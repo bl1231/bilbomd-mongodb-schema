@@ -62,7 +62,8 @@ const jobSchema = new Schema(
       email: { type: stepStatusSchema, required: true },
       nersc_prepare_slurm_batch: { type: stepStatusSchema, required: false },
       nersc_submit_slurm_batch: { type: stepStatusSchema, required: false },
-      nersc_job_status: { type: stepStatusSchema, required: false }
+      nersc_job_status: { type: stepStatusSchema, required: false },
+      nersc_copy_results_to_cfs: { type: stepStatusSchema, required: false }
     }
   },
   {

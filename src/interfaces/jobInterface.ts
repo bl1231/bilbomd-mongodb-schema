@@ -8,7 +8,7 @@ interface IStepStatus {
 
 // Interface for steps status
 interface IBilboMDSteps {
-  alphafold: IStepStatus
+  alphafold?: IStepStatus
   pdb2crd: IStepStatus
   pae: IStepStatus
   autorg: IStepStatus
