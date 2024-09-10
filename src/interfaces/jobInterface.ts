@@ -27,6 +27,7 @@ interface IBilboMDSteps {
 }
 
 interface IAlphaFoldEntity {
+  name: string
   sequence: string
   type: string
   copies: number
@@ -78,6 +79,7 @@ interface IBilboMDAutoJob extends IJob {
 
 interface IBilboMDAlphaFoldJob extends IJob {
   entities: IAlphaFoldEntity[]
+  fasta_file: string
   pdb_file?: string
   psf_file?: string
   crd_file?: string
@@ -95,6 +97,7 @@ interface IBilboMDScoperJob extends IJob {
 export {
   IStepStatus,
   IBilboMDSteps,
+  IAlphaFoldEntity,
   IJob,
   IBilboMDPDBJob,
   IBilboMDCRDJob,
