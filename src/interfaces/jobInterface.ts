@@ -19,6 +19,7 @@ interface IBilboMDSteps {
   dcd2pdb: IStepStatus
   foxs: IStepStatus
   multifoxs: IStepStatus
+  copy_results_to_cfs?: IStepStatus
   results: IStepStatus
   email: IStepStatus
   nersc_prepare_slurm_batch?: IStepStatus

@@ -58,6 +58,7 @@ const jobSchema = new Schema(
       dcd2pdb: { type: stepStatusSchema, required: true },
       foxs: { type: stepStatusSchema, required: true },
       multifoxs: { type: stepStatusSchema, required: true },
+      copy_results_to_cfs: { type: stepStatusSchema, required: false },
       results: { type: stepStatusSchema, required: true },
       email: { type: stepStatusSchema, required: true },
       nersc_prepare_slurm_batch: { type: stepStatusSchema, required: false },
