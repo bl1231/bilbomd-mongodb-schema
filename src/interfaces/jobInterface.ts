@@ -36,7 +36,7 @@ interface IAlphaFoldEntity {
 }
 
 interface IJob extends Document {
-  __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper' | 'BilboMdAlphaFold'
+  __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper' | 'BilboMdAlphaFold' | 'BilboMdSANS'
   title: string
   uuid: string
   status: string
