@@ -69,7 +69,10 @@ const jobSchema = new Schema(
     }
   },
   {
-    timestamps: true
+    timestamps: true,
+    id: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
   }
 )
 
