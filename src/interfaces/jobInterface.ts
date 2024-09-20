@@ -92,6 +92,16 @@ interface IBilboMDAlphaFoldJob extends IJob {
   rg_max?: number
 }
 
+interface IBilboMDSANSJob extends IJob {
+  pdb_file: string
+  psf_file?: string
+  crd_file?: string
+  const_inp_file: string
+  conformational_sampling: number
+  rg_min: number
+  rg_max: number
+}
+
 interface IBilboMDScoperJob extends IJob {
   pdb_file: string
 }
@@ -105,5 +115,6 @@ export {
   IBilboMDCRDJob,
   IBilboMDAutoJob,
   IBilboMDAlphaFoldJob,
+  IBilboMDSANSJob,
   IBilboMDScoperJob
 }
