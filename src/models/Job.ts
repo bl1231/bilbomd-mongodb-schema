@@ -148,10 +148,11 @@ const bilboMdSANSJobSchema = new Schema<IBilboMDSANSJob>({
   },
   rg_min: { type: Number, required: true, min: 10, max: 100 },
   rg_max: { type: Number, required: true, min: 10, max: 100 },
+  d2o_fraction: { type: Number, required: true },
   deuteration_fractions: {
     type: Schema.Types.Mixed,
     required: true
-  },
+  }
 })
 
 const bilboMdScoperJobSchema = new Schema<IBilboMDScoperJob>({
@@ -163,8 +164,20 @@ const BilboMdPDBJob = Job.discriminator('BilboMdPDB', bilboMdPDBJobSchema)
 const BilboMdCRDJob = Job.discriminator('BilboMdCRD', bilboMdCRDJobSchema)
 const BilboMdJob = Job.discriminator('BilboMd', bilboMdCRDJobSchema)
 const BilboMdAutoJob = Job.discriminator('BilboMdAuto', bilboMdAutoJobSchema)
-const BilboMdAlphaFoldJob = Job.discriminator('BilboMdAlphaFold', bilboMdAlphaFoldJobSchema)
+const BilboMdAlphaFoldJob = Job.discriminator(
+  'BilboMdAlphaFold',
+  bilboMdAlphaFoldJobSchema
+)
 const BilboMdSANSJob = Job.discriminator('BilboMdSANS', bilboMdSANSJobSchema)
 const BilboMdScoperJob = Job.discriminator('BilboMdScoper', bilboMdScoperJobSchema)
 
-export { Job, BilboMdJob, BilboMdPDBJob, BilboMdCRDJob, BilboMdAutoJob, BilboMdScoperJob, BilboMdAlphaFoldJob, BilboMdSANSJob }
+export {
+  Job,
+  BilboMdJob,
+  BilboMdPDBJob,
+  BilboMdCRDJob,
+  BilboMdAutoJob,
+  BilboMdScoperJob,
+  BilboMdAlphaFoldJob,
+  BilboMdSANSJob
+}

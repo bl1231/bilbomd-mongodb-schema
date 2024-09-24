@@ -105,6 +105,7 @@ interface IBilboMDSANSJob extends IJob {
   crd_file?: string
   const_inp_file: string
   conformational_sampling: number
+  d2o_fraction: number
   rg_min: number
   rg_max: number
   deuteration_fractions: Map<string, number>
