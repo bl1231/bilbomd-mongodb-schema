@@ -18,7 +18,9 @@ interface IBilboMDSteps {
   md: IStepStatus
   dcd2pdb: IStepStatus
   foxs: IStepStatus
+  pepsisans: IStepStatus
   multifoxs: IStepStatus
+  gasans: IStepStatus
   copy_results_to_cfs?: IStepStatus
   results: IStepStatus
   email: IStepStatus
