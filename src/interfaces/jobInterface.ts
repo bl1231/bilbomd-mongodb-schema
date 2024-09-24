@@ -36,7 +36,14 @@ interface IAlphaFoldEntity {
 }
 
 interface IJob extends Document {
-  __t: 'BilboMd' | 'BilboMdPDB' | 'BilboMdCRD' | 'BilboMdAuto' | 'BilboMdScoper' | 'BilboMdAlphaFold' | 'BilboMdSANS'
+  __t:
+    | 'BilboMd'
+    | 'BilboMdPDB'
+    | 'BilboMdCRD'
+    | 'BilboMdAuto'
+    | 'BilboMdScoper'
+    | 'BilboMdAlphaFold'
+    | 'BilboMdSANS'
   title: string
   uuid: string
   status: string
@@ -100,6 +107,7 @@ interface IBilboMDSANSJob extends IJob {
   conformational_sampling: number
   rg_min: number
   rg_max: number
+  deuteration_fractions: Map<string, number>
 }
 
 interface IBilboMDScoperJob extends IJob {

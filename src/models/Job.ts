@@ -147,7 +147,11 @@ const bilboMdSANSJobSchema = new Schema<IBilboMDSANSJob>({
     default: 1
   },
   rg_min: { type: Number, required: true, min: 10, max: 100 },
-  rg_max: { type: Number, required: true, min: 10, max: 100 }
+  rg_max: { type: Number, required: true, min: 10, max: 100 },
+  deuteration_fractions: {
+    type: Schema.Types.Mixed,
+    required: true
+  },
 })
 
 const bilboMdScoperJobSchema = new Schema<IBilboMDScoperJob>({
