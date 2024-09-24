@@ -9,21 +9,21 @@ interface IStepStatus {
 // Interface for steps status
 interface IBilboMDSteps {
   alphafold?: IStepStatus
-  pdb2crd: IStepStatus
-  pae: IStepStatus
-  autorg: IStepStatus
-  minimize: IStepStatus
-  initfoxs: IStepStatus
-  heat: IStepStatus
-  md: IStepStatus
-  dcd2pdb: IStepStatus
-  foxs: IStepStatus
-  pepsisans: IStepStatus
-  multifoxs: IStepStatus
-  gasans: IStepStatus
+  pdb2crd?: IStepStatus
+  pae?: IStepStatus
+  autorg?: IStepStatus
+  minimize?: IStepStatus
+  initfoxs?: IStepStatus
+  heat?: IStepStatus
+  md?: IStepStatus
+  dcd2pdb?: IStepStatus
+  foxs?: IStepStatus
+  pepsisans?: IStepStatus
+  multifoxs?: IStepStatus
+  gasans?: IStepStatus
   copy_results_to_cfs?: IStepStatus
-  results: IStepStatus
-  email: IStepStatus
+  results?: IStepStatus
+  email?: IStepStatus
   nersc_prepare_slurm_batch?: IStepStatus
   nersc_submit_slurm_batch?: IStepStatus
   nersc_job_status?: IStepStatus
