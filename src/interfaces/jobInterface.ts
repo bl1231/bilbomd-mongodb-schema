@@ -17,6 +17,7 @@ interface IBilboMDSteps {
   heat?: IStepStatus
   md?: IStepStatus
   dcd2pdb?: IStepStatus
+  pdb_remediate?: IStepStatus
   foxs?: IStepStatus
   pepsisans?: IStepStatus
   multifoxs?: IStepStatus

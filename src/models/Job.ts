@@ -57,6 +57,7 @@ const jobSchema = new Schema(
       heat: { type: stepStatusSchema, required: false },
       md: { type: stepStatusSchema, required: false },
       dcd2pdb: { type: stepStatusSchema, required: false },
+      pdb_remediate: { type: stepStatusSchema, required: false },
       foxs: { type: stepStatusSchema, required: false },
       pepsisans: { type: stepStatusSchema, required: false },
       multifoxs: { type: stepStatusSchema, required: false },
