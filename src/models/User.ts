@@ -1,8 +1,6 @@
 import { Schema, model } from 'mongoose'
 import { IUser } from '../interfaces'
 
-// const RoleSchema = new Schema({ roles: String });
-
 const userSchema = new Schema(
   {
     username: {
@@ -15,6 +13,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true
+    },
+    newEmail: {
+      type: String,
+      required: false
     },
     previousEmails: { type: [String], required: false, default: [] },
     status: {
