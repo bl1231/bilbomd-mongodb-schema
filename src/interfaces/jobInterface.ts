@@ -73,6 +73,7 @@ interface IJob extends Document {
   time_completed?: Date
   user: IUser
   steps: IBilboMDSteps
+  feedback?: IFeedbackData
 }
 
 interface IBilboMDPDBJob extends IJob {
