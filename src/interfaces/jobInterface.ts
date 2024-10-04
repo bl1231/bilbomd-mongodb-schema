@@ -38,6 +38,23 @@ interface IAlphaFoldEntity {
   copies: number
 }
 
+interface IFeedbackData {
+  mw_saxs: number
+  mw_model: number
+  mw_err: number
+  best_model: string
+  overall_chi_square: number
+  q_ranges: number[]
+  chi_squares_of_regions: number[]
+  residuals_of_regions: number[]
+  mw_feedback: string
+  overall_chi_square_feedback: string
+  highest_chi_square_feedback: string
+  second_highest_chi_square_feedback: string
+  regional_chi_square_feedback: string
+  timestamp: Date
+}
+
 interface IJob extends Document {
   __t:
     | 'BilboMd'
@@ -122,6 +139,7 @@ export {
   IStepStatus,
   IBilboMDSteps,
   IAlphaFoldEntity,
+  IFeedbackData,
   IJob,
   IBilboMDPDBJob,
   IBilboMDCRDJob,

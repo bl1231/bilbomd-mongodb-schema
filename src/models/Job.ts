@@ -7,7 +7,8 @@ import {
   IBilboMDScoperJob,
   IBilboMDAlphaFoldJob,
   IBilboMDSANSJob,
-  IAlphaFoldEntity
+  IAlphaFoldEntity,
+  IFeedbackData
 } from '../interfaces'
 
 // Enum for step statuses
@@ -24,6 +25,23 @@ const alphaFoldEntitySchema = new Schema<IAlphaFoldEntity>({
   sequence: { type: String, required: true },
   type: { type: String, required: true },
   copies: { type: Number, required: true }
+})
+
+const feedbackSchema = new Schema<IFeedbackData>({
+  mw_saxs: { type: Number, required: true },
+  mw_model: { type: Number, required: true },
+  mw_err: { type: Number, required: true },
+  best_model: { type: String, required: true },
+  overall_chi_square: { type: Number, required: true },
+  q_ranges: [{ type: Number, required: true }],
+  chi_squares_of_regions: [{ type: Number, required: true }],
+  residuals_of_regions: [{ type: Number, required: true }],
+  mw_feedback: { type: String, required: true },
+  overall_chi_square_feedback: { type: String, required: true },
+  highest_chi_square_feedback: { type: String, required: true },
+  second_highest_chi_square_feedback: { type: String, required: true },
+  regional_chi_square_feedback: { type: String, required: true },
+  timestamp: { type: Date, default: () => new Date(Date.now()) }
 })
 
 const jobSchema = new Schema(
@@ -69,7 +87,8 @@ const jobSchema = new Schema(
       nersc_submit_slurm_batch: { type: stepStatusSchema, required: false },
       nersc_job_status: { type: stepStatusSchema, required: false },
       nersc_copy_results_to_cfs: { type: stepStatusSchema, required: false }
-    }
+    },
+    feedback: { type: feedbackSchema, required: false }
   },
   {
     timestamps: true,
