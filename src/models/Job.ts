@@ -108,6 +108,7 @@ const bilboMdPDBJobSchema = new Schema<IBilboMDPDBJob>({
     enum: [1, 2, 3, 4],
     default: 1
   },
+  rg: { type: Number, required: true, min: 10, max: 100 },
   rg_min: { type: Number, required: true, min: 10, max: 100 },
   rg_max: { type: Number, required: true, min: 10, max: 100 }
 })
@@ -122,6 +123,7 @@ const bilboMdCRDJobSchema = new Schema<IBilboMDCRDJob>({
     enum: [1, 2, 3, 4],
     default: 1
   },
+  rg: { type: Number, required: true, min: 10, max: 100 },
   rg_min: { type: Number, required: true, min: 10, max: 100 },
   rg_max: { type: Number, required: true, min: 10, max: 100 }
 })
@@ -137,6 +139,7 @@ const bilboMdAutoJobSchema = new Schema<IBilboMDAutoJob>({
     enum: [1, 2, 3, 4],
     default: 1
   },
+  rg: { type: Number, required: false, min: 10, max: 100 },
   rg_min: { type: Number, required: false, min: 10, max: 100 },
   rg_max: { type: Number, required: false, min: 10, max: 100 }
 })
@@ -154,6 +157,7 @@ const bilboMdAlphaFoldJobSchema = new Schema<IBilboMDAlphaFoldJob>({
     enum: [1, 2, 3, 4],
     default: 1
   },
+  rg: { type: Number, required: false, min: 10, max: 100 },
   rg_min: { type: Number, required: false, min: 10, max: 100 },
   rg_max: { type: Number, required: false, min: 10, max: 100 }
 })
@@ -168,6 +172,7 @@ const bilboMdSANSJobSchema = new Schema<IBilboMDSANSJob>({
     enum: [1, 2, 3, 4],
     default: 1
   },
+  rg: { type: Number, required: true, min: 10, max: 100 },
   rg_min: { type: Number, required: true, min: 10, max: 100 },
   rg_max: { type: Number, required: true, min: 10, max: 100 },
   d2o_fraction: { type: Number, required: true },

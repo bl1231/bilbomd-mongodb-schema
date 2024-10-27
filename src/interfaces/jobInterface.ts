@@ -82,6 +82,7 @@ interface IBilboMDPDBJob extends IJob {
   pdb_file: string
   const_inp_file: string
   conformational_sampling: number
+  rg: number
   rg_min: number
   rg_max: number
 }
@@ -92,6 +93,7 @@ interface IBilboMDCRDJob extends IJob {
   pdb_file?: string
   const_inp_file: string
   conformational_sampling: number
+  rg: number
   rg_min: number
   rg_max: number
 }
@@ -103,6 +105,7 @@ interface IBilboMDAutoJob extends IJob {
   pae_file: string
   const_inp_file?: string
   conformational_sampling: number
+  rg?: number
   rg_min?: number
   rg_max?: number
 }
@@ -116,6 +119,7 @@ interface IBilboMDAlphaFoldJob extends IJob {
   pae_file?: string
   const_inp_file?: string
   conformational_sampling: number
+  rg?: number
   rg_min?: number
   rg_max?: number
 }
@@ -127,6 +131,7 @@ interface IBilboMDSANSJob extends IJob {
   const_inp_file: string
   conformational_sampling: number
   d2o_fraction: number
+  rg: number
   rg_min: number
   rg_max: number
   deuteration_fractions: Map<string, number>
