@@ -55,6 +55,15 @@ interface IFeedbackData {
   timestamp: Date
 }
 
+interface INerscInfo {
+  jobid: string
+  state: string
+  qos: string
+  time_submitted: Date
+  time_started?: Date
+  time_completed?: Date
+}
+
 interface IJob extends Document {
   __t:
     | 'BilboMd'
@@ -74,6 +83,7 @@ interface IJob extends Document {
   user: IUser
   steps: IBilboMDSteps
   feedback?: IFeedbackData
+  nersc?: INerscInfo
 }
 
 interface IBilboMDPDBJob extends IJob {
@@ -146,6 +156,7 @@ export {
   IBilboMDSteps,
   IAlphaFoldEntity,
   IFeedbackData,
+  INerscInfo,
   IJob,
   IBilboMDPDBJob,
   IBilboMDCRDJob,
