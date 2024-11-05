@@ -8,7 +8,9 @@ import {
   IBilboMDAlphaFoldJob,
   IBilboMDSANSJob,
   IAlphaFoldEntity,
-  IFeedbackData
+  IFeedbackData,
+  INerscInfo,
+  IBilboMDSteps
 } from '../interfaces'
 
 // Enum for step statuses
@@ -44,6 +46,39 @@ const feedbackSchema = new Schema<IFeedbackData>({
   timestamp: { type: Date, default: () => new Date(Date.now()) }
 })
 
+const stepsSchema = new Schema<IBilboMDSteps>({
+  alphafold: { type: stepStatusSchema, required: false },
+  pdb2crd: { type: stepStatusSchema, required: false },
+  pae: { type: stepStatusSchema, required: false },
+  autorg: { type: stepStatusSchema, required: false },
+  minimize: { type: stepStatusSchema, required: false },
+  initfoxs: { type: stepStatusSchema, required: false },
+  heat: { type: stepStatusSchema, required: false },
+  md: { type: stepStatusSchema, required: false },
+  dcd2pdb: { type: stepStatusSchema, required: false },
+  pdb_remediate: { type: stepStatusSchema, required: false },
+  foxs: { type: stepStatusSchema, required: false },
+  pepsisans: { type: stepStatusSchema, required: false },
+  multifoxs: { type: stepStatusSchema, required: false },
+  gasans: { type: stepStatusSchema, required: false },
+  copy_results_to_cfs: { type: stepStatusSchema, required: false },
+  results: { type: stepStatusSchema, required: false },
+  email: { type: stepStatusSchema, required: false },
+  nersc_prepare_slurm_batch: { type: stepStatusSchema, required: false },
+  nersc_submit_slurm_batch: { type: stepStatusSchema, required: false },
+  nersc_job_status: { type: stepStatusSchema, required: false },
+  nersc_copy_results_to_cfs: { type: stepStatusSchema, required: false }
+})
+
+const nerscInfoSchema = new Schema<INerscInfo>({
+  jobid: { type: String, required: false },
+  state: { type: String, required: false },
+  qos: { type: String, required: false },
+  time_submitted: { type: Date, default: () => new Date(Date.now()) },
+  time_started: { type: Date, required: false },
+  time_completed: { type: Date, required: false }
+})
+
 const jobSchema = new Schema(
   {
     title: {
@@ -65,30 +100,9 @@ const jobSchema = new Schema(
       ref: 'User',
       required: true
     },
-    steps: {
-      alphafold: { type: stepStatusSchema, required: false },
-      pdb2crd: { type: stepStatusSchema, required: false },
-      pae: { type: stepStatusSchema, required: false },
-      autorg: { type: stepStatusSchema, required: false },
-      minimize: { type: stepStatusSchema, required: false },
-      initfoxs: { type: stepStatusSchema, required: false },
-      heat: { type: stepStatusSchema, required: false },
-      md: { type: stepStatusSchema, required: false },
-      dcd2pdb: { type: stepStatusSchema, required: false },
-      pdb_remediate: { type: stepStatusSchema, required: false },
-      foxs: { type: stepStatusSchema, required: false },
-      pepsisans: { type: stepStatusSchema, required: false },
-      multifoxs: { type: stepStatusSchema, required: false },
-      gasans: { type: stepStatusSchema, required: false },
-      copy_results_to_cfs: { type: stepStatusSchema, required: false },
-      results: { type: stepStatusSchema, required: false },
-      email: { type: stepStatusSchema, required: false },
-      nersc_prepare_slurm_batch: { type: stepStatusSchema, required: false },
-      nersc_submit_slurm_batch: { type: stepStatusSchema, required: false },
-      nersc_job_status: { type: stepStatusSchema, required: false },
-      nersc_copy_results_to_cfs: { type: stepStatusSchema, required: false }
-    },
-    feedback: { type: feedbackSchema, required: false }
+    steps: { type: stepsSchema, required: false },
+    feedback: { type: feedbackSchema, required: false },
+    nersc: { type: nerscInfoSchema, required: false }
   },
   {
     timestamps: true,
