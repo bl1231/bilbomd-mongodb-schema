@@ -101,6 +101,12 @@ const jobSchema = new Schema(
       required: true
     },
     steps: { type: stepsSchema, required: false },
+    progress: {
+      type: Number,
+      min: 0,
+      max: 100,
+      default: 0
+    },
     feedback: { type: feedbackSchema, required: false },
     nersc: { type: nerscInfoSchema, required: false }
   },

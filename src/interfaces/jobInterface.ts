@@ -82,6 +82,7 @@ interface IJob extends Document {
   time_completed?: Date
   user: IUser
   steps: IBilboMDSteps
+  progress: number
   feedback?: IFeedbackData
   nersc?: INerscInfo
 }
