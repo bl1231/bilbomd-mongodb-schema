@@ -1,8 +1,10 @@
 import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
+type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
+
 interface IStepStatus {
-  status: string
+  status: StepStatusEnum
   message: string
 }
 
