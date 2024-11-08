@@ -87,6 +87,7 @@ interface IJob extends Document {
   progress: number
   feedback?: IFeedbackData
   nersc?: INerscInfo
+  cleanup_in_progress: boolean
 }
 
 interface IBilboMDPDBJob extends IJob {

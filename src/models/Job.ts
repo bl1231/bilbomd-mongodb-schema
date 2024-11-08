@@ -108,7 +108,8 @@ const jobSchema = new Schema(
       default: 0
     },
     feedback: { type: feedbackSchema, required: false },
-    nersc: { type: nerscInfoSchema, required: false }
+    nersc: { type: nerscInfoSchema, required: false },
+    cleanup_in_progress: { type: Boolean, default: false }
   },
   {
     timestamps: true,
