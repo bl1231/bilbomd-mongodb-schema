@@ -153,6 +153,7 @@ interface IBilboMDSANSJob extends IJob {
 
 interface IBilboMDScoperJob extends IJob {
   pdb_file: string
+  fixc1c2: boolean
 }
 
 export {

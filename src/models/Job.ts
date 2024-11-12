@@ -204,7 +204,8 @@ const bilboMdSANSJobSchema = new Schema<IBilboMDSANSJob>({
 })
 
 const bilboMdScoperJobSchema = new Schema<IBilboMDScoperJob>({
-  pdb_file: { type: String, required: true }
+  pdb_file: { type: String, required: true },
+  fixc1c2: { type: Boolean, required: true }
 })
 
 const Job = model<IJob>('Job', jobSchema)
