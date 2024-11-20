@@ -208,6 +208,8 @@ const bilboMdScoperJobSchema = new Schema<IBilboMDScoperJob>({
   fixc1c2: { type: Boolean, required: true }
 })
 
+jobSchema.index({ uuid: 1 })
+
 const Job = model<IJob>('Job', jobSchema)
 const BilboMdPDBJob = Job.discriminator('BilboMdPDB', bilboMdPDBJobSchema)
 const BilboMdCRDJob = Job.discriminator('BilboMdCRD', bilboMdCRDJobSchema)
