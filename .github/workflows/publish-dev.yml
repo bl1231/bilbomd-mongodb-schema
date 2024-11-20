@@ -1,13 +1,12 @@
-name: Publish Stable Package
+name: Publish Development Package
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 jobs:
-  publish:
-    if: ${{ github.actor != 'dependabot[bot]' }}
+  publish-dev:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +25,9 @@ jobs:
       - name: Build Package
         run: npm run build
 
-      - name: Publish to GitHub Package Registry
-        run: npm publish
+      - name: Publish Development Package
+        run: |
+          npm version prerelease --preid=dev
+          npm publish --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
