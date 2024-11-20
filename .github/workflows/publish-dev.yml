@@ -30,11 +30,18 @@ jobs:
       - name: Build Package
         run: npm run build
 
+      - name: Configure npm for Authenticated Access
+        run: |
+          echo "@bl1231:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+
       - name: Get Current Dev Version and Increment
         id: version
         run: |
           CURRENT_VERSION=$(npm show @bl1231/bilbomd-mongodb-schema@dev version || echo "0.0.0-dev.0")
+          echo "Current Version: $CURRENT_VERSION"
           NEW_VERSION=$(npx semver "$CURRENT_VERSION" --increment prerelease --preid dev)
+          echo "New Version: $NEW_VERSION"
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
 
       - name: Update Version and Publish
