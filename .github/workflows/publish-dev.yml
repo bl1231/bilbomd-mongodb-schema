@@ -32,8 +32,8 @@ jobs:
 
       - name: Configure npm for Authenticated Access
         run: |
-          echo "@bl1231:registry=https://npm.pkg.github.com/" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+          echo "@bl1231:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
 
       - name: Get Current Dev Version and Increment
         id: version
