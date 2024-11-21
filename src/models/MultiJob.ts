@@ -17,7 +17,7 @@ const multiJobSchema = new Schema(
     time_submitted: { type: Date, default: () => new Date(Date.now()) },
     time_started: { type: Date, required: false },
     time_completed: { type: Date, required: false },
-    steps: { type: stepsSchema, required: false },
+    steps: { type: stepsSchema, required: true, default: {} },
     progress: { type: Number, min: 0, max: 100, default: 0 },
     nersc: { type: nerscInfoSchema, required: false },
     cleanup_in_progress: { type: Boolean, default: false }
