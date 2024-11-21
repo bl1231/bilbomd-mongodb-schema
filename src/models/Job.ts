@@ -230,5 +230,7 @@ export {
   BilboMdAutoJob,
   BilboMdScoperJob,
   BilboMdAlphaFoldJob,
-  BilboMdSANSJob
+  BilboMdSANSJob,
+  stepsSchema,
+  nerscInfoSchema
 }
