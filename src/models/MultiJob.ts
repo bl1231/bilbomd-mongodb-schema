@@ -1,11 +1,13 @@
 import { Schema, model } from 'mongoose'
 import { IMultiJob } from '../interfaces'
+import { stepsSchema, nerscInfoSchema } from './Job'
 
 const multiJobSchema = new Schema(
   {
     title: { type: String, required: true },
     uuid: { type: String, required: true, unique: true },
     bilbomd_uuids: [{ type: String, required: true }],
+    data_file_from: { type: String, required: true },
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     status: {
       type: String,
@@ -15,7 +17,10 @@ const multiJobSchema = new Schema(
     time_submitted: { type: Date, default: () => new Date(Date.now()) },
     time_started: { type: Date, required: false },
     time_completed: { type: Date, required: false },
-    progress: { type: Number, min: 0, max: 100, default: 0 }
+    steps: { type: stepsSchema, required: false },
+    progress: { type: Number, min: 0, max: 100, default: 0 },
+    nersc: { type: nerscInfoSchema, required: false },
+    cleanup_in_progress: { type: Boolean, default: false }
   },
   {
     timestamps: true,
