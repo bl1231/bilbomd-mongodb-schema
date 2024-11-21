@@ -3,6 +3,8 @@ import { IUser } from './userInterface'
 
 type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
 
+type JobStatusEnum = 'Submitted' | 'Pending' | 'Running' | 'Completed' | 'Error'
+
 interface IStepStatus {
   status: StepStatusEnum
   message: string
@@ -77,7 +79,7 @@ interface IJob extends Document {
     | 'BilboMdSANS'
   title: string
   uuid: string
-  status: string
+  status: JobStatusEnum
   data_file: string
   time_submitted: Date
   time_started?: Date
