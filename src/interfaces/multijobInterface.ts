@@ -1,6 +1,6 @@
 import { Document } from 'mongoose'
 import { IUser } from './userInterface'
-import { IJob } from './jobInterface'
+import { IJob, IBilboMDSteps } from './jobInterface'
 
 type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
 
@@ -16,6 +16,7 @@ interface IMultiJob extends Document {
   time_completed?: Date
   progress: number
   bilbomd_jobs?: IJob[]
+  steps: IBilboMDSteps
 }
 
 export { IMultiJob }
