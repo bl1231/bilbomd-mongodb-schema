@@ -9,6 +9,7 @@ interface IMultiJob extends Document {
   title: string
   uuid: string
   bilbomd_uuids: string[]
+  data_file_from: string
   user: IUser
   status: StepStatusEnum
   time_submitted: Date
