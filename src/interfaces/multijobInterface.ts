@@ -1,6 +1,13 @@
 import { Document } from 'mongoose'
 import { IUser } from './userInterface'
-import { IJob, IBilboMDSteps, INerscInfo } from './jobInterface'
+import {
+  IBilboMDPDBJob,
+  IBilboMDCRDJob,
+  IBilboMDAutoJob,
+  IBilboMDAlphaFoldJob,
+  IBilboMDSteps,
+  INerscInfo
+} from './jobInterface'
 
 type JobStatusEnum = 'Submitted' | 'Pending' | 'Running' | 'Completed' | 'Error'
 
@@ -16,7 +23,12 @@ interface IMultiJob extends Document {
   time_started?: Date
   time_completed?: Date
   progress: number
-  bilbomd_jobs?: IJob[]
+  bilbomd_jobs?: (
+    | IBilboMDPDBJob
+    | IBilboMDCRDJob
+    | IBilboMDAutoJob
+    | IBilboMDAlphaFoldJob
+  )[]
   steps: IBilboMDSteps
   nersc?: INerscInfo
 }
