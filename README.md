@@ -13,12 +13,18 @@ I had some great notes on how to do this... but alas.
 ### dev
 
 ```bash
-npm version 1.4.1-dev.1 --no-git-tag-version
+npm version prerelease --preid=dev --no-git-tag-version
 npm publish --tag dev
 npm show @bl1231/bilbomd-mongodb-schema@dev
 ``` 
 
-### prod
+### stable release
+
+```bash
+npm version patch
+npm publish
+git push --follow-tags
+```
 
 ## Version History
 
