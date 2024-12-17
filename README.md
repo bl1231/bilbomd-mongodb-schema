@@ -15,6 +15,10 @@ I had some great notes on how to do this... but alas.
 ```bash
 npm version prerelease --preid=dev --no-git-tag-version
 npm publish --tag dev
+git add package.json package-lock.json
+git commit -m "Bump version to x.x.x-dev.x"
+git push origin main
+
 npm show @bl1231/bilbomd-mongodb-schema@dev
 ``` 
 
