@@ -8,7 +8,17 @@ Since we are using these Mongoose/MongoDB schema in multiple repositories I thou
 
 ## Release
 
+I had some great notes on how to do this... but alas.
 
+### dev
+
+```bash
+npm version 1.4.1-dev.1 --no-git-tag-version
+npm publish --tag dev
+npm show @bl1231/bilbomd-mongodb-schema@dev
+``` 
+
+### prod
 
 ## Version History
 
