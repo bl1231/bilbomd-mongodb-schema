@@ -6,8 +6,14 @@ Since we are using these Mongoose/MongoDB schema in multiple repositories I thou
 
 - Scott Classen sclassen at lbl dot gov
 
+## Release
+
+
+
 ## Version History
 
+- 1.4.2 (12/17/2024)
+  - Add `updatedAt` to `IUser` interface
 - 1.4.1
   - Bump NodeJS to v22.12.0
   - Run `npm audit fix`
