@@ -24,6 +24,7 @@ interface IUser extends Document {
   otp: IOtp | null
   UUID: string
   createdAt: Date
+  updatedAt: Date
   last_access: Date
   jobs: IJob | null
 }
