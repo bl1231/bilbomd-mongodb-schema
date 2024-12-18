@@ -42,7 +42,6 @@ multiJobSchema.set('toJSON', { virtuals: true })
 multiJobSchema.set('toObject', { virtuals: true })
 
 // Define indexes
-multiJobSchema.index({ uuid: 1 }) // Unique identifier index
 multiJobSchema.index({ user: 1 }) // Index for queries by user
 
 const MultiJob = model<IMultiJob>('MultiJob', multiJobSchema)
