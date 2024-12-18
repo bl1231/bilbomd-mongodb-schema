@@ -26,7 +26,9 @@ interface IUser extends Document {
   createdAt: Date
   updatedAt: Date
   last_access: Date
-  jobs: IJob | null
+  jobs: IJob[] | null
+  jobCount: number
+  jobTypes: Map<string, number>
 }
 
 export { IUser }

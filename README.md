@@ -16,20 +16,21 @@ If we are on `1.4.3-dev.13` and want to go to `1.4.4-dev.0`
 
 ```bash
 npm version prerelease --preid=dev --no-git-tag-version
+npm publish
 git add package.json package-lock.json
 git commit -m "Bump version to x.x.x-dev.x"
-git push origin main
+git push
 
 npm show @bl1231/bilbomd-mongodb-schema@dev
 npm dist-tag ls @bl1231/bilbomd-mongodb-schema 
 ``` 
 
-otherwise any push to `main` will trigger an increment
+otherwise any push to `main` will trigger an increment as long as the "version" in package.json is `X.X.X-dev.X`
 
 
 ### stable release
 
-
+I think we need to manually adjust "version" in package.json to the current stable version (i.e. `X.X.X` ) before running `npm version ....`
 
 ```bash
 npm version patch/minor/major
