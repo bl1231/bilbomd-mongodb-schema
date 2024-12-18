@@ -1,9 +1,11 @@
 name: Publish Development Package
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    paths-ignore:
+      - '**/*.md'
 
 jobs:
   publish-dev:
