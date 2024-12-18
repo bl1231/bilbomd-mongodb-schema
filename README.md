@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.4.4 (12/18/2024)
+  - Add jobCount and jobTypes to User schema and interface
 - 1.4.2 (12/17/2024)
   - Add `updatedAt` to `IUser` interface
 - 1.4.1
