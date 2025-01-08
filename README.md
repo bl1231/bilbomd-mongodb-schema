@@ -23,7 +23,7 @@ git push
 
 npm show @bl1231/bilbomd-mongodb-schema@dev
 npm dist-tag ls @bl1231/bilbomd-mongodb-schema 
-``` 
+```
 
 otherwise any push to `main` will trigger an increment as long as the "version" in package.json is `X.X.X-dev.X`
 
@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.4.6 (1/8/2025)
+  - Add `best_ensemble_pdb_file` to `IFeedbackData` and Job schema
 - 1.4.5 (12/18/2024)
   - Remove the explicit index for MultiJob uuid
 - 1.4.4 (12/18/2024)
