@@ -46,7 +46,8 @@ interface IFeedbackData {
   mw_saxs: number
   mw_model: number
   mw_err: number
-  best_model: string
+  best_model_dat_file: string
+  best_ensemble_pdb_file: string
   overall_chi_square: number
   q_ranges: number[]
   chi_squares_of_regions: number[]
