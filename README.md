@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.4.8 (1/9/2025)
+  - Allow optional `best_model` so we don't break existing DB entries
 - 1.4.6 (1/8/2025)
   - Add `best_ensemble_pdb_file` to `IFeedbackData` and Job schema
 - 1.4.5 (12/18/2024)
