@@ -95,6 +95,7 @@ interface IJob extends Document {
 }
 
 interface IBilboMDPDBJob extends IJob {
+  __t: 'BilboMdPDB'
   psf_file?: string
   crd_file?: string
   pdb_file: string
@@ -106,6 +107,7 @@ interface IBilboMDPDBJob extends IJob {
 }
 
 interface IBilboMDCRDJob extends IJob {
+  __t: 'BilboMdCRD'
   psf_file: string
   crd_file: string
   pdb_file?: string
@@ -117,6 +119,7 @@ interface IBilboMDCRDJob extends IJob {
 }
 
 interface IBilboMDAutoJob extends IJob {
+  __t: 'BilboMdAuto'
   pdb_file: string
   psf_file?: string
   crd_file?: string
@@ -129,6 +132,7 @@ interface IBilboMDAutoJob extends IJob {
 }
 
 interface IBilboMDAlphaFoldJob extends IJob {
+  __t: 'BilboMdAlphaFold'
   alphafold_entities: IAlphaFoldEntity[]
   fasta_file: string
   pdb_file?: string
@@ -143,6 +147,7 @@ interface IBilboMDAlphaFoldJob extends IJob {
 }
 
 interface IBilboMDSANSJob extends IJob {
+  __t: 'BilboMdSANS'
   pdb_file: string
   psf_file?: string
   crd_file?: string
@@ -156,6 +161,7 @@ interface IBilboMDSANSJob extends IJob {
 }
 
 interface IBilboMDScoperJob extends IJob {
+  __t: 'BilboMdScoper'
   pdb_file: string
   fixc1c2: boolean
 }
