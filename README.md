@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.4.9 (1/10/2025)
+  - Add `__t` Job discriminator to each job interface
 - 1.4.8 (1/9/2025)
   - Allow optional `best_model` so we don't break existing DB entries
 - 1.4.6 (1/8/2025)
