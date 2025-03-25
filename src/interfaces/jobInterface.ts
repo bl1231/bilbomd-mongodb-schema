@@ -3,7 +3,27 @@ import { IUser } from './userInterface'
 
 type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
 
-type JobStatusEnum = 'Submitted' | 'Pending' | 'Running' | 'Completed' | 'Error'
+type JobStatusEnum =
+  | 'Submitted'
+  | 'Pending'
+  | 'Running'
+  | 'Completed'
+  | 'Error'
+  | 'Failed'
+  | 'Cancelled'
+
+type NerscStatusEnum =
+  | 'PENDING'
+  | 'RUNNING'
+  | 'COMPLETED'
+  | 'FAILED'
+  | 'CANCELLED'
+  | 'TIMEOUT'
+  | 'UNKNOWN'
+  | 'OUT_OF_MEMORY'
+  | 'NODE_FAIL'
+  | 'PREEMPTED'
+  | 'SUSPENDED'
 
 interface IStepStatus {
   status: StepStatusEnum
@@ -63,7 +83,7 @@ interface IFeedbackData {
 
 interface INerscInfo {
   jobid: string
-  state: string
+  state: NerscStatusEnum
   qos: string
   time_submitted: Date
   time_started?: Date

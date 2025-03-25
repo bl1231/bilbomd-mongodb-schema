@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.5.0 (3/35/2025)
+  - Add enums for NERSC status
 - 1.4.9 (1/10/2025)
   - Add `__t` Job discriminator to each job interface
 - 1.4.8 (1/9/2025)
