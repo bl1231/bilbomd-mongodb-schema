@@ -1,7 +1,13 @@
 import { Document, Types } from 'mongoose'
 import { IUser } from './userInterface'
 
-type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
+export const StepStatus = {
+  Waiting: 'Waiting',
+  Running: 'Running',
+  Success: 'Success',
+  Error: 'Error'
+} as const
+
 
 export const JobStatus = {
   Submitted: 'Submitted',
@@ -194,8 +200,9 @@ interface IBilboMDScoperJob extends IJob {
 
 export type JobStatusEnum = typeof JobStatus[keyof typeof JobStatus]
 export type NerscStatusEnum = typeof NerscStatus[keyof typeof NerscStatus]
+export type StepStatusEnum = typeof StepStatus[keyof typeof StepStatus]
+
 export {
-  StepStatusEnum,
   IStepStatus,
   IBilboMDSteps,
   IAlphaFoldEntity,
