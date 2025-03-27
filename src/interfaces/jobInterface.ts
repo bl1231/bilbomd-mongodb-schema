@@ -3,27 +3,33 @@ import { IUser } from './userInterface'
 
 type StepStatusEnum = 'Waiting' | 'Running' | 'Success' | 'Error'
 
-type JobStatusEnum =
-  | 'Submitted'
-  | 'Pending'
-  | 'Running'
-  | 'Completed'
-  | 'Error'
-  | 'Failed'
-  | 'Cancelled'
+export const JobStatus = {
+  Submitted: 'Submitted',
+  Pending: 'Pending',
+  Running: 'Running',
+  Completed: 'Completed',
+  Error: 'Error',
+  Failed: 'Failed',
+  Cancelled: 'Cancelled'
+} as const
 
-type NerscStatusEnum =
-  | 'PENDING'
-  | 'RUNNING'
-  | 'COMPLETED'
-  | 'FAILED'
-  | 'CANCELLED'
-  | 'TIMEOUT'
-  | 'UNKNOWN'
-  | 'OUT_OF_MEMORY'
-  | 'NODE_FAIL'
-  | 'PREEMPTED'
-  | 'SUSPENDED'
+
+
+export const NerscStatus = {
+  PENDING: 'PENDING',
+  RUNNING: 'RUNNING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  CANCELLED: 'CANCELLED',
+  TIMEOUT: 'TIMEOUT',
+  UNKNOWN: 'UNKNOWN',
+  OUT_OF_MEMORY: 'OUT_OF_MEMORY',
+  NODE_FAIL: 'NODE_FAIL',
+  PREEMPTED: 'PREEMPTED',
+  SUSPENDED: 'SUSPENDED'
+} as const
+
+
 
 interface IStepStatus {
   status: StepStatusEnum
@@ -186,9 +192,10 @@ interface IBilboMDScoperJob extends IJob {
   fixc1c2: boolean
 }
 
+export type JobStatusEnum = typeof JobStatus[keyof typeof JobStatus]
+export type NerscStatusEnum = typeof NerscStatus[keyof typeof NerscStatus]
 export {
   StepStatusEnum,
-  JobStatusEnum,
   IStepStatus,
   IBilboMDSteps,
   IAlphaFoldEntity,
