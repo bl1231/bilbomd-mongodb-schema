@@ -188,6 +188,7 @@ interface IBilboMDScoperJob extends IJob {
 
 export {
   StepStatusEnum,
+  JobStatusEnum,
   IStepStatus,
   IBilboMDSteps,
   IAlphaFoldEntity,
