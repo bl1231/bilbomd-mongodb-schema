@@ -16,7 +16,7 @@ If we are on `1.4.3-dev.13` and want to go to `1.4.4-dev.0`
 
 ```bash
 npm version prerelease --preid=dev --no-git-tag-version
-npm publish
+npm publish --tag dev
 git add package.json package-lock.json
 git commit -m "Bump version to x.x.x-dev.x"
 git push
