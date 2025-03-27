@@ -90,7 +90,15 @@ const jobSchema = new Schema(
     data_file: { type: String, required: true },
     status: {
       type: String,
-      enum: ['Submitted', 'Pending', 'Running', 'Completed', 'Error'],
+      enum: [
+        'Submitted',
+        'Pending',
+        'Running',
+        'Completed',
+        'Error',
+        'Failed',
+        'Cancelled'
+      ],
       default: 'Submitted'
     },
     time_submitted: { type: Date, default: () => new Date(Date.now()) },
