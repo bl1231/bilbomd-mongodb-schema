@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.6.1 (4/14/2025)
+  - Split exports into frontend-safe and full backend
 - 1.6.0 (4/14/2025)
   - Add exported constants
   - Defined `jobTypeDisplayNames` to map friendly names to MongoDB `__t` job types.
