@@ -1,6 +1,6 @@
 {
   "name": "@bl1231/bilbomd-mongodb-schema",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "BilboMD Mongoose Schema",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,11 +33,11 @@
     "typescript": "^5.8.2"
   },
   "exports": {
-  ".": {
-    "import": "./dist/index.js"
-  },
-  "./frontend": {
-    "import": "./dist/frontend.js"
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./frontend": {
+      "import": "./dist/frontend.js"
+    }
   }
-}
 }
