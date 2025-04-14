@@ -39,6 +39,9 @@ git push --follow-tags
 
 ## Version History
 
+- 1.6.0 (4/14/2025)
+  - Add exported constants
+  - Defined `jobTypeDisplayNames` to map friendly names to MongoDB `__t` job types.
 - 1.5.0 (3/35/2025)
   - Add enums for NERSC status
 - 1.4.9 (1/10/2025)
