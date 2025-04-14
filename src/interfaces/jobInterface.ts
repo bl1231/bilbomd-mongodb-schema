@@ -8,7 +8,6 @@ export const StepStatus = {
   Error: 'Error'
 } as const
 
-
 export const JobStatus = {
   Submitted: 'Submitted',
   Pending: 'Pending',
@@ -18,8 +17,6 @@ export const JobStatus = {
   Failed: 'Failed',
   Cancelled: 'Cancelled'
 } as const
-
-
 
 export const NerscStatus = {
   PENDING: 'PENDING',
@@ -34,8 +31,6 @@ export const NerscStatus = {
   PREEMPTED: 'PREEMPTED',
   SUSPENDED: 'SUSPENDED'
 } as const
-
-
 
 interface IStepStatus {
   status: StepStatusEnum
@@ -198,9 +193,9 @@ interface IBilboMDScoperJob extends IJob {
   fixc1c2: boolean
 }
 
-export type JobStatusEnum = typeof JobStatus[keyof typeof JobStatus]
-export type NerscStatusEnum = typeof NerscStatus[keyof typeof NerscStatus]
-export type StepStatusEnum = typeof StepStatus[keyof typeof StepStatus]
+export type JobStatusEnum = (typeof JobStatus)[keyof typeof JobStatus]
+export type NerscStatusEnum = (typeof NerscStatus)[keyof typeof NerscStatus]
+export type StepStatusEnum = (typeof StepStatus)[keyof typeof StepStatus]
 
 export {
   IStepStatus,
