@@ -98,6 +98,7 @@ interface INerscInfo {
 }
 
 interface IJob extends Document {
+  _id: Types.ObjectId
   __t:
     | 'BilboMd'
     | 'BilboMdPDB'

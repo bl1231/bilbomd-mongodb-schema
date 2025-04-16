@@ -12,6 +12,7 @@ interface IConfirmationCode {
 }
 
 interface IUser extends Document {
+  _id: Types.ObjectId
   username: string
   roles: string[]
   refreshToken: string[]
