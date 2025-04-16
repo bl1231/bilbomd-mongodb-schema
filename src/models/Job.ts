@@ -109,6 +109,11 @@ const jobSchema = new Schema(
       ref: 'User',
       required: true
     },
+    resubmitted_from: {
+      type: Schema.Types.ObjectId,
+      ref: 'Job',
+      required: false
+    },
     steps: { type: stepsSchema, required: false },
     progress: {
       type: Number,

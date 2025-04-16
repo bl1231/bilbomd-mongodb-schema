@@ -113,7 +113,8 @@ interface IJob extends Document {
   time_submitted: Date
   time_started?: Date
   time_completed?: Date
-  user: IUser
+  user: IUser | Types.ObjectId
+  resubmitted_from?: IJob | Types.ObjectId
   steps: IBilboMDSteps
   progress: number
   feedback?: IFeedbackData
