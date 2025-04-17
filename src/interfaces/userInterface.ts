@@ -16,6 +16,12 @@ interface IUser extends Document {
   username: string
   roles: string[]
   refreshToken: string[]
+  apiTokens: {
+    tokenHash: string
+    label?: string
+    createdAt: Date
+    expiresAt?: Date
+  }[]
   email: string
   newEmail: string | null
   previousEmails: string[]

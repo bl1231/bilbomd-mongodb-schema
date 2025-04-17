@@ -9,6 +9,17 @@ const userSchema = new Schema(
     },
     roles: { type: [String], required: true, default: ['User'] },
     refreshToken: { type: [String], required: true, default: [] },
+    apiTokens: {
+      type: [
+        {
+          tokenHash: { type: String, required: true, index: true },
+          label: String,
+          createdAt: { type: Date, default: Date.now },
+          expiresAt: Date
+        }
+      ],
+      default: []
+    },
     email: {
       type: String,
       required: true,
