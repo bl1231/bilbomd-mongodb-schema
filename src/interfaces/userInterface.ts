@@ -12,7 +12,7 @@ interface IConfirmationCode {
 }
 
 interface IAPIToken {
-  _id: Types.ObjectId
+  _id?: Types.ObjectId
   tokenHash: string
   label?: string
   createdAt: Date
