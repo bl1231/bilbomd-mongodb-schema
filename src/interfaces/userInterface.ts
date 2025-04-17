@@ -11,17 +11,19 @@ interface IConfirmationCode {
   expiresAt: Date
 }
 
+interface IAPIToken {
+  tokenHash: string
+  label?: string
+  createdAt: Date
+  expiresAt?: Date
+}
+
 interface IUser extends Document {
   _id: Types.ObjectId
   username: string
   roles: string[]
   refreshToken: string[]
-  apiTokens: {
-    tokenHash: string
-    label?: string
-    createdAt: Date
-    expiresAt?: Date
-  }[]
+  apiTokens: IAPIToken[]
   email: string
   newEmail: string | null
   previousEmails: string[]
@@ -38,4 +40,4 @@ interface IUser extends Document {
   jobTypes: Map<string, number>
 }
 
-export { IUser }
+export { IUser, IAPIToken }
