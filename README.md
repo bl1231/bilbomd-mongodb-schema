@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.7.0 (4/29/2025)
+  - Add API Tokens to User schema and interface
 - 1.6.4 (4/16/2025)
   - Add `_id` to `IJob` and `IUser` interfaces
 - 1.6.2 (4/16/2025)
