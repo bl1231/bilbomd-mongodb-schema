@@ -26,11 +26,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
-    "mongoose": "^8.13.0"
+    "mongoose": "^8.15.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9",
-    "typescript": "^5.8.2"
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
   },
   "exports": {
     ".": {
