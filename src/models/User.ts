@@ -8,6 +8,15 @@ const userSchema = new Schema(
       required: true
     },
     roles: { type: [String], required: true, default: ['User'] },
+    oauth: {
+      type: [
+        {
+          provider: { type: String, required: true },
+          id: { type: String, required: true }
+        }
+      ],
+      default: []
+    },
     refreshToken: { type: [String], required: true, default: [] },
     apiTokens: {
       type: [
