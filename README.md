@@ -39,6 +39,8 @@ git push --follow-tags
 
 ## Version History
 
+- 1.7.1 (6/2/2025)
+  - Update dependencies
 - 1.7.0 (4/29/2025)
   - Add API Tokens to User schema and interface
 - 1.6.4 (4/16/2025)
