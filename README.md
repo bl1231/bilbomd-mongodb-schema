@@ -40,7 +40,7 @@ git push --follow-tags
 ## Version History
 
 - 1.8.0 (6/2/2025)
-  - Add OathIdentity to the User schema
+  - Add OAuthIdentity to the User schema
 - 1.7.1 (6/2/2025)
   - Update dependencies
 - 1.7.0 (4/29/2025)
