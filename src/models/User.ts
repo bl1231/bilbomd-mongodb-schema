@@ -12,7 +12,14 @@ const userSchema = new Schema(
       type: [
         {
           provider: { type: String, required: true },
-          id: { type: String, required: true }
+          id: { type: String, required: true },
+          name: { type: String, required: true },
+          accessToken: { type: String },
+          refreshToken: { type: String },
+          tokenType: { type: String },
+          scope: { type: String },
+          expiresIn: { type: Number },
+          tokenIssuedAt: { type: Date, default: Date.now }
         }
       ],
       default: []

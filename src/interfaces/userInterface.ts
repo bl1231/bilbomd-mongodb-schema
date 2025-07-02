@@ -22,6 +22,12 @@ interface IAPIToken {
 interface OAuthIdentity {
   provider: 'google' | 'orcid' | 'github' | string
   id: string
+  name: string
+  accessToken?: string
+  refreshToken?: string
+  tokenType?: string
+  expiresIn?: number
+  issuedAt?: Date
 }
 
 interface IUser extends Document {
