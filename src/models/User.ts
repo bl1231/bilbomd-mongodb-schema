@@ -41,6 +41,14 @@ const userSchema = new Schema(
       required: true,
       unique: true
     },
+    firstName: {
+      type: String,
+      required: false
+    },
+    lastName: {
+      type: String,
+      required: false
+    },
     newEmail: {
       type: String,
       required: false

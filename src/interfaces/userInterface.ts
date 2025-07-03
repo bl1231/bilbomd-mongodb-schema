@@ -26,8 +26,9 @@ interface OAuthIdentity {
   accessToken?: string
   refreshToken?: string
   tokenType?: string
+  scope?: string
   expiresIn?: number
-  issuedAt?: Date
+  tokenIssuedAt?: Date
 }
 
 interface IUser extends Document {
@@ -38,6 +39,8 @@ interface IUser extends Document {
   refreshToken: string[]
   apiTokens: IAPIToken[]
   email: string
+  firstName: string | null
+  lastName: string | null
   newEmail: string | null
   previousEmails: string[]
   status: string
