@@ -19,13 +19,28 @@ interface IAPIToken {
   expiresAt?: Date
 }
 
+interface OAuthIdentity {
+  provider: 'google' | 'orcid' | 'github' | string
+  id: string
+  name: string
+  accessToken?: string
+  refreshToken?: string
+  tokenType?: string
+  scope?: string
+  expiresIn?: number
+  tokenIssuedAt?: Date
+}
+
 interface IUser extends Document {
   _id: Types.ObjectId
   username: string
   roles: string[]
+  oauth: OAuthIdentity[]
   refreshToken: string[]
   apiTokens: IAPIToken[]
   email: string
+  firstName: string | null
+  lastName: string | null
   newEmail: string | null
   previousEmails: string[]
   status: string

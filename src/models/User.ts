@@ -8,6 +8,22 @@ const userSchema = new Schema(
       required: true
     },
     roles: { type: [String], required: true, default: ['User'] },
+    oauth: {
+      type: [
+        {
+          provider: { type: String, required: true },
+          id: { type: String, required: true },
+          name: { type: String, required: true },
+          accessToken: { type: String },
+          refreshToken: { type: String },
+          tokenType: { type: String },
+          scope: { type: String },
+          expiresIn: { type: Number },
+          tokenIssuedAt: { type: Date, default: Date.now }
+        }
+      ],
+      default: []
+    },
     refreshToken: { type: [String], required: true, default: [] },
     apiTokens: {
       type: [
@@ -24,6 +40,14 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true
+    },
+    firstName: {
+      type: String,
+      required: false
+    },
+    lastName: {
+      type: String,
+      required: false
     },
     newEmail: {
       type: String,
